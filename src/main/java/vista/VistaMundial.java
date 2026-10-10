@@ -54,6 +54,15 @@ public class VistaMundial {
 
     // true = s, false = n
     public boolean preguntarSiNo(String mensaje) {
-        return true;
+        while(true){
+          String respuesta = ingresarTexto(mensaje + " (s/n): ").toLowerCase();
+            if (respuesta.equals("s") || respuesta.equals("si") || respuesta.equals("sí")){
+                return true;
+            }else if (respuesta.equals("n") || respuesta.equals("no")){
+                return false;
+            }else{
+                mostrarError("Respuesta inválida. Por favor ingrese 's' o 'n'.");
+            }
+        }
     }
 }
