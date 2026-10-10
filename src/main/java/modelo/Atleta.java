@@ -47,7 +47,7 @@ public class Atleta {
     
     public String toString(){
         return "Nombre: " + nombre + 
-                "\nEdad: " + edad +
+                "\nEdad: " + edad + " años" +
                 "\nPais: " + pais;
     }
 }

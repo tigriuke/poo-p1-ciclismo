@@ -60,8 +60,8 @@ public class Competidor extends Atleta {
         return super.toString() +
             "\nRanking: " + ranking +
             "\nPuntos: " + puntos + 
-            "\nEstatura: " + estatura +
-            "\nPeso: " + peso;
+            "\nEstatura: " + estatura + " cm" +
+            "\nPeso: " + peso + " kg";
     }
     
     public void actualizarRanking(int puntos){
