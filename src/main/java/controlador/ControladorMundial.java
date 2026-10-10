@@ -76,8 +76,12 @@ public class ControladorMundial {
                         vista.mostrarError("El nombre no puede ser vacío");
                     }
                 } while (nombre.trim().isEmpty());
-
-                actualizarPuntaje();
+                
+                boolean ganoMedalla;
+                ganoMedalla = vista.preguntarSiONo("¿Este competidor gano alguna medalla?");
+                    
+                
+                actualizarPuntaje(nombre, ganoMedalla);
             }
 
 
@@ -143,5 +147,38 @@ public class ControladorMundial {
         
         Competidor c = new Competidor(nombre, edad, pais, ranking, estatura, peso);
         return c;
+    }
+    
+    public void buscarCompetidor(String nombre){
+        for(Competidor c : competidores){
+            if(c.getNombre().trim().equalsIgnoreCase(nombre)){
+                System.out.println(c.toString());
+            }
+        }
+        System.out.println("Competidor " + nombre + " no encontrado.");
+    }
+    
+    public void actualizarPuntaje(String nombre, boolean medalla){
+        //Se obtienen los puntos y se valida que sean positivos
+        int puntos;
+        do{
+            puntos = vista.pedirPuntos();
+            if (puntos <= 0){
+                vista.mostrarError("Los puntos a sumar deben ser mayores a 0.");
+            }
+        } while(puntos <= 0);
+        
+        
+        for(Competidor c : competidores){
+            if(c.getNombre().trim().equalsIgnoreCase(nombre)){
+                if (medalla){
+                c.actualizarRanking(puntos, medalla);
+                }
+                else{c.actualizarRanking(puntos);}
+                
+                System.out.println(c.toString());
+            }
+        }
+        System.out.println("Competidor " + nombre + " no encontrado.");
     }
 }

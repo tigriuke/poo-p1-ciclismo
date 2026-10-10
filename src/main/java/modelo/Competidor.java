@@ -14,10 +14,10 @@ public class Competidor extends Atleta {
     private double estatura;
     private double peso;
     
-    public Competidor(String nombre, int edad, String pais, double estatura, double peso) {
+    public Competidor(String nombre, int edad, String pais, int ranking, double estatura, double peso) {
         super(nombre, edad, pais);
         this.puntos = 0;
-        this.ranking = 10;
+        this.ranking = ranking;
         this.estatura = estatura;
         this.peso = peso;
         
