@@ -49,7 +49,7 @@ public class VistaMundial {
     }
 
     public void mostrarError(String mensaje) {
-        
+       System.err.println("[ERROR] "+ mensaje);
     }
 
     // true = s, false = n
