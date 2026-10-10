@@ -45,6 +45,7 @@ public class Atleta {
     }
     
     
+    @Override
     public String toString(){
         return "Nombre: " + nombre + 
                 "\nEdad: " + edad + " años" +

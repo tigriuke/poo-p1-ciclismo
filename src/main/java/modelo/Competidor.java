@@ -68,7 +68,6 @@ public class Competidor extends Atleta {
         this.puntos += puntos;
         if (puntos >= 30){
             if(ranking == 1) {
-                return;
             }
             else{
                 ranking -= 1;
